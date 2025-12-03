@@ -1,0 +1,29 @@
+#!/bin/bash
+
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_H10
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_H2
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_H4
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_H6
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_H8
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_INab200
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_INab300
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_INab400
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_INab500
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km110
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km120
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km130
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km140
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km150
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km50
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km60
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km70
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km80
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_Km90
+python clean_simulations.py /mnt_c/mstrocch/baseline_Tref_pH_NHE_off
+python clean_simulations.py /mnt_c/mstrocch/HF_Tref_pH
+python clean_simulations.py /mnt_c/mstrocch/HF_Tref_pH_NHE_off
+python clean_simulations.py /mnt_c/mstrocch/low_pH_bicarb_Tref_pH
+python clean_simulations.py /mnt_c/mstrocch/low_pH_bicarb_Tref_pH_bicarb
+python clean_simulations.py /mnt_c/mstrocch/low_pH_bicarb_Tref_pH_bicarb_NHE_off
+python clean_simulations.py /mnt_c/mstrocch/low_pH_bicarb_Tref_pH_NHE_off
