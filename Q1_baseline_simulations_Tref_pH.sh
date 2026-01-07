@@ -3,7 +3,7 @@
 NBEATS=3000
 
 SIMFOLDER="baseline_Tref_pH"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -21,7 +21,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_NHE_off"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 0.0 
 		--bicarb_factor 1.0  

@@ -3,7 +3,7 @@
 NBEATS=3000
 
 SIMFOLDER="baseline_Tref_pH_Km50"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -21,7 +21,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km60"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -39,7 +39,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km70"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -57,7 +57,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km80"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -75,7 +75,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km90"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -93,7 +93,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km110"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -111,7 +111,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km120"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -129,7 +129,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km130"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -147,7 +147,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km140"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 
@@ -165,7 +165,7 @@ cmd="python run_SS_simulation_Tref_pH.py
 eval $cmd
 
 SIMFOLDER="baseline_Tref_pH_Km150"
-cmd="python run_SS_simulation_Tref_pH.py 
+cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
 		--bicarb_factor 1.0 

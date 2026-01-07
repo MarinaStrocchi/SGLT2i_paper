@@ -67,7 +67,7 @@ def run_split_model(args):
 	store_actions = ['fast','visualise','compute_algebraic','coarse']
 	original_args = copy.deepcopy(args)
 	for i in range(Nsplits):
-		process_cmd = ['python','niederer_smith_2007_pacing_study_Tref_pH.py']
+		process_cmd = ['python','niederer_smith_2007_pacing_study_Tref_pH_R1.py']
 
 		simfolder_sub = os.path.join(original_args.simfolder,"split_"+str(i))
 		args_dct = vars(args)
