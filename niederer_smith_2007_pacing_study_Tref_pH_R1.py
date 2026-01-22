@@ -1,7 +1,7 @@
 # Size of variable arrays:
 sizeAlgebraic = 140
 sizeStates = 26
-sizeConstants = 190
+sizeConstants = 196
 
 import os
 
@@ -374,6 +374,12 @@ def createLegends():
     legend_constants[139] = "alpha_3 in component Cross_Bridges (dimensionless)"
     legend_constants[188] = "bt maximum tension-pH dependence (dimensionless)"
     legend_constants[189] = "pHref reference pH for tension-pH dependence (dimensionless)"
+    legend_constants[190] = "n_up for pH-dendence in SERCA uptake (dimensionless)"
+    legend_constants[191] = "pKup for pH-dendence in SERCA uptake (dimensionless)"
+    legend_constants[192] = "nNaCa for pH-dendence in NCX (dimensionless)"
+    legend_constants[193] = "pKNaCa for pH-dendence in NCX (dimensionless)"
+    legend_constants[194] = "nrel for pH-dendence in RyR (dimensionless)"
+    legend_constants[195] = "pKrel for pH-dendence in RyR (dimensionless)"
     legend_rates[0] = "d/dt V in component membrane (mV)"
     legend_rates[2] = "d/dt m in component sodium_current_m_gate (dimensionless)"
     legend_rates[3] = "d/dt h in component sodium_current_h_gate (dimensionless)"
@@ -630,11 +636,36 @@ def initConsts(args):
     constants[185] = 1.00000+constants[53]/constants[183]+(constants[52]*constants[53])/(constants[183]*constants[19])
     constants[186] = 1.00000+constants[63]/constants[183]+(constants[63]*constants[45])/(constants[183]*constants[62])
     constants[187] = 1.00000+constants[62]/constants[45]+(constants[62]*constants[183])/(constants[45]*constants[63])
-    constants[188] = 0.621
-    constants[189] = 7.15
+    constants[188] = 0.621 # b_t for pH-dendendence in tension
+    constants[189] = 7.15  # pH_ref
+    constants[190] = 1.14  # n_up for pH-dendence in SERCA uptake
+    constants[191] = 7.53  # pKup for pH-dendence in SERCA uptake
+    constants[192] = 0.991 # nNaCa for pH-dendence in NCX 
+    constants[193] = 7.37  # pKNaCa for pH-dendence in NCX 
+    constants[194] = 1.87  # nrel for pH-dendence in RyR 
+    constants[195] = 6.64  # pKrel for pH-dendence in RyR 
+
     return (states, constants)
 
 def computeRates(voi, states, constants):
+
+    # -----------------------------------------
+    # updating constants with pH dependence
+
+    # Reference tension
+    constants[122] = 56.2 * (1+constants[188]*(states[13]-constants[189]))
+
+    # SERCA
+    constants[95] = 0.00045 * (1.0 + numpy.power(10.0000, constants[190] * (-constants[189] + constants[191])))/(1.0 + numpy.power(10.0000, constants[190] * (-states[13] + constants[191])))
+ 
+    # NCX
+    constants[94] = 0.0385 * (1.0 + numpy.power(10.0000, constants[192] * (-constants[189] + constants[193])))/(1.0 + numpy.power(10.0000, constants[192] * (-states[13] + constants[193])))
+
+    # RyR
+    constants[102] = 2e-11 * (1.0 + numpy.power(10.0000, constants[194] * (-constants[189] + constants[195])))/(1.0 + numpy.power(10.0000, constants[194] * (-states[13] + constants[195])))
+
+    # -----------------------------------------
+
     rates = [0.0] * sizeStates; algebraic = [0.0] * sizeAlgebraic
     rates[23] = constants[134]*constants[154]-constants[137]*states[23]
     rates[24] = constants[135]*constants[154]-constants[138]*states[24]
@@ -781,7 +812,7 @@ def computeRates(voi, states, constants):
     algebraic[122] = (constants[167]*algebraic[109])/(constants[167]+algebraic[107])
     algebraic[124] = algebraic[111]
     rates[21] = (algebraic[126]*states[19]-(algebraic[128]+algebraic[122])*states[21])+algebraic[124]*algebraic[133]
-    algebraic[134] = (constants[122]*states[22])/constants[170]*(1+constants[188]*(states[13]-constants[189]))
+    algebraic[134] = (constants[122]*states[22])/constants[170]
     algebraic[135] = algebraic[134]*constants[159]
     algebraic[136] = states[23]+states[24]+states[25]
     algebraic[137] = custom_piecewise([numpy.less(algebraic[136] , 0.00000), (algebraic[135]*(constants[133]*algebraic[136]+1.00000))/(1.00000-algebraic[136]) , True, (algebraic[135]*(1.00000+(constants[133]+2.00000)*algebraic[136]))/(1.00000+algebraic[136])])
@@ -792,6 +823,24 @@ def computeRates(voi, states, constants):
     return(rates)
 
 def computeAlgebraic(constants, states, voi):
+
+    # -----------------------------------------
+    # updating constants with pH dependence
+
+    # Reference tension
+    constants[122] = 56.2 * (1+constants[188]*(states[13]-constants[189]))
+
+    # SERCA
+    constants[95] = 0.00045 * (1.0 + numpy.power(10.0000, constants[190] * (-constants[189] + constants[191])))/(1.0 + numpy.power(10.0000, constants[190] * (-states[13] + constants[191])))
+ 
+    # NCX
+    constants[94] = 0.0385 * (1.0 + numpy.power(10.0000, constants[192] * (-constants[189] + constants[193])))/(1.0 + numpy.power(10.0000, constants[192] * (-states[13] + constants[193])))
+
+    # RyR
+    constants[102] = 2e-11 * (1.0 + numpy.power(10.0000, constants[194] * (-constants[189] + constants[195])))/(1.0 + numpy.power(10.0000, constants[194] * (-states[13] + constants[195])))
+
+    # -----------------------------------------
+
     algebraic = numpy.array([[0.0] * len(voi)] * sizeAlgebraic)
     states = numpy.array(states)
     voi = numpy.array(voi)
@@ -916,7 +965,7 @@ def computeAlgebraic(constants, states, voi):
     algebraic[133] = ((1.00000-states[19])-states[20])-states[21]
     algebraic[122] = (constants[167]*algebraic[109])/(constants[167]+algebraic[107])
     algebraic[124] = algebraic[111]
-    algebraic[134] = (constants[122]*states[22])/constants[170]*(1+constants[188]*(states[13]-constants[189]))
+    algebraic[134] = (constants[122]*states[22])/constants[170]
     algebraic[135] = algebraic[134]*constants[159]
     algebraic[136] = states[23]+states[24]+states[25]
     algebraic[137] = custom_piecewise([numpy.less(algebraic[136] , 0.00000), (algebraic[135]*(constants[133]*algebraic[136]+1.00000))/(1.00000-algebraic[136]) , True, (algebraic[135]*(1.00000+(constants[133]+2.00000)*algebraic[136]))/(1.00000+algebraic[136])])
