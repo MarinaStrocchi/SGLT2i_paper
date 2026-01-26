@@ -2,7 +2,7 @@
 
 NBEATS=3000
 
-SIMFOLDER="baseline_Tref_pH_H2"
+SIMFOLDER="baseline_pH_H2"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
@@ -20,7 +20,7 @@ cmd="python run_SS_simulation_Tref_pH_R1.py
 		>/dev/null 2>&1 &"
 eval $cmd
 
-SIMFOLDER="baseline_Tref_pH_H4"
+SIMFOLDER="baseline_pH_H4"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
@@ -38,7 +38,7 @@ cmd="python run_SS_simulation_Tref_pH_R1.py
 		>/dev/null 2>&1 &"
 eval $cmd
 
-SIMFOLDER="baseline_Tref_pH_H6"
+SIMFOLDER="baseline_pH_H6"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
@@ -56,7 +56,7 @@ cmd="python run_SS_simulation_Tref_pH_R1.py
 		>/dev/null 2>&1 &"
 eval $cmd
 
-SIMFOLDER="baseline_Tref_pH_H8"
+SIMFOLDER="baseline_pH_H8"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
@@ -74,7 +74,7 @@ cmd="python run_SS_simulation_Tref_pH_R1.py
 		>/dev/null 2>&1 &"
 eval $cmd
 
-SIMFOLDER="baseline_Tref_pH_H10"
+SIMFOLDER="baseline_pH_H10"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 

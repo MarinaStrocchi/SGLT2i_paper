@@ -2,7 +2,7 @@
 
 NBEATS=3000
 
-SIMFOLDER="HF_Tref_pH"
+SIMFOLDER="HF_pH"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 1.0 
@@ -20,7 +20,7 @@ cmd="python run_SS_simulation_Tref_pH_R1.py
 		>/dev/null 2>&1 &"
 eval $cmd
 
-SIMFOLDER="HF_Tref_pH_NHE_off"
+SIMFOLDER="HF_pH_NHE_off"
 cmd="python run_SS_simulation_Tref_pH_R1.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 0.0 
