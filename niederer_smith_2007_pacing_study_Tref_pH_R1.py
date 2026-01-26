@@ -1,7 +1,7 @@
 # Size of variable arrays:
 sizeAlgebraic = 140
 sizeStates = 26
-sizeConstants = 196
+sizeConstants = 197
 
 import os
 
