@@ -380,6 +380,7 @@ def createLegends():
     legend_constants[193] = "pKNaCa for pH-dendence in NCX (dimensionless)"
     legend_constants[194] = "nrel for pH-dendence in RyR (dimensionless)"
     legend_constants[195] = "pKrel for pH-dendence in RyR (dimensionless)"
+    legend_constants[196] = "constant inward proton current (uA_per_mm2)"
     legend_rates[0] = "d/dt V in component membrane (mV)"
     legend_rates[2] = "d/dt m in component sodium_current_m_gate (dimensionless)"
     legend_rates[3] = "d/dt h in component sodium_current_h_gate (dimensionless)"
@@ -511,7 +512,7 @@ def initConsts(args):
     constants[70] = 1.44
     constants[71] = 0.35
     constants[72] = 0.05
-    constants[73] = 0.03253
+    constants[73] = 0.03253*float(args.bicarb_factor)
     constants[74] = 760
     constants[75] = 0.000365
     constants[76] = 0.481
@@ -630,7 +631,7 @@ def initConsts(args):
     constants[179] = constants[67]*constants[178]
     constants[180] = (constants[66]*constants[65])/constants[64]
     constants[181] = 1000.00*(numpy.power(10.0000, -constants[36]))
-    constants[182] = constants[72]*constants[73]*constants[74]*float(args.bicarb_factor)
+    constants[182] = constants[72]*constants[73]*constants[74]
     constants[183] = ((constants[75]/constants[76])*constants[182])/((numpy.power(10.0000, -constants[36]))*1000.00)
     constants[184] = 1.00000+constants[19]/constants[52]+(constants[19]*constants[183])/(constants[52]*constants[53])
     constants[185] = 1.00000+constants[53]/constants[183]+(constants[52]*constants[53])/(constants[183]*constants[19])
@@ -644,6 +645,7 @@ def initConsts(args):
     constants[193] = 7.37  # pKNaCa for pH-dendence in NCX 
     constants[194] = 1.87  # nrel for pH-dendence in RyR 
     constants[195] = 6.64  # pKrel for pH-dendence in RyR 
+    constants[196] = float(args.H_constant)
 
     return (states, constants)
 
@@ -742,7 +744,7 @@ def computeRates(voi, states, constants):
     rates[12] = (algebraic[42]/constants[3]-algebraic[79]/(constants[3]+constants[4]))+constants[84]
     algebraic[74] = 1000.00*(numpy.power(10.0000, -states[13]))
     algebraic[75] = ((constants[7]*constants[8])/constants[9])*math.log(constants[150]/algebraic[74])
-    algebraic[76] = constants[83]*(states[0]-algebraic[75])+float(args.H_constant)
+    algebraic[76] = constants[83]*(states[0]-algebraic[75])+constants[196]
     algebraic[46] = (numpy.power(10.0000, -states[13]))*1000.00
     algebraic[47] = (constants[38]*states[1]*constants[40])/(constants[37]*constants[38]+constants[38]*states[1]+states[1]*algebraic[46]+constants[37]*algebraic[46])
     algebraic[48] = (constants[37]*algebraic[46]*constants[41])/(constants[37]*constants[38]+constants[38]*states[1]+states[1]*algebraic[46]+constants[37]*algebraic[46])
@@ -902,7 +904,7 @@ def computeAlgebraic(constants, states, voi):
     algebraic[42] = constants[3]*constants[140]*constants[35]*(constants[182]-states[12])
     algebraic[74] = 1000.00*(numpy.power(10.0000, -states[13]))
     algebraic[75] = ((constants[7]*constants[8])/constants[9])*numpy.log(constants[150]/algebraic[74])
-    algebraic[76] = constants[83]*(states[0]-algebraic[75])+float(args.H_constant)
+    algebraic[76] = constants[83]*(states[0]-algebraic[75])+constants[196]
     algebraic[46] = (numpy.power(10.0000, -states[13]))*1000.00
     algebraic[47] = (constants[38]*states[1]*constants[40])/(constants[37]*constants[38]+constants[38]*states[1]+states[1]*algebraic[46]+constants[37]*algebraic[46])
     algebraic[48] = (constants[37]*algebraic[46]*constants[41])/(constants[37]*constants[38]+constants[38]*states[1]+states[1]*algebraic[46]+constants[37]*algebraic[46])
