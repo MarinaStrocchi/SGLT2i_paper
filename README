@@ -1,0 +1,47 @@
+1 - PYTHON ENV AND PACKAGES
+
+There could be an environment already installed on the 64 cores machine you use. It would be called cellml
+
+if so, activate it with:
+conda activate cellml
+
+If not, you can create it with:
+conda create -n cellml python=3.10.14
+
+You need the following packages installed:
+matplotlib      3.9.1
+numpy           2.0.0
+pandas          2.3.3
+scipy           1.14.0
+To install packages after activating env:
+pip install PACKAGENAME==VERSION
+
+2 - SPACE ON MACHINE
+
+Check that you have enough space on the disk. To do this: 
+df -h
+Each 64 cores machine has different disks. In some they are called data1, data2 etc.. or mnt_a, mnt_b etc... In other, they are called differently but you can see the list with the command above. The simulations save lots of text files so they take up loads of space. Check that the disk as at least 50% of space available
+
+3 - RUN SIMS
+
+Create a simulations and download all scripts from github branch revision2
+
+Run all shell scripts in the folder:
+bash sensitivity_calcium.sh; bash sensitivity_current.sh; bash sensitivity_fluxes.sh 
+
+This will launch all simulations needed (46 of them). The simulations take 3 days (long, I know but I downloaded the code from cellml and it's slow).
+
+Each sim folder will have split_0, split_1 etc... Each split contains the files for 100 beats. There will be 30 of them at the end of the simulations (up to split_29) as we run 3000 beats.
+
+4 - GET OUTPUTS
+
+Run:
+python extract_data_sensitivity.py
+
+This will extract the last beat of the quantities we want and it will create a spreadsheet with the metrics to analyse for the sensitivity analysis
+
+5 - CLEAN SIMS
+
+We do not need to save all of the sims so we delete all folders up to split_28 and keep only the last 100 beats (split_29)
+
+bash clean_simulations.sh
