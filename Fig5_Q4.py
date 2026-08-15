@@ -37,8 +37,8 @@ hatches = ['','///','','///']
 line_styles = ['-','--','-','--']
 dashes = [[],(5, 1),[],(5, 1)]
 
-sims_to_compare = ["baseline_Tref_pH","baseline_Tref_pH_NHE_off",
-				   "HF_Tref_pH","HF_Tref_pH_NHE_off"]
+sims_to_compare = ["baseline_pH","baseline_pH_NHE_off",
+				   "HF_pH","HF_pH_NHE_off"]
 legend = ["baseline","NHE off","$[Na^+]_i$ ++","$[Na^+]_i$ ++\nNHE off"]
 
 time_transients = []

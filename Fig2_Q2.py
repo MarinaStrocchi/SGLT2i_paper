@@ -37,8 +37,8 @@ hatches = ['','///','','///']
 line_styles = ['-','--','-','--']
 dashes = [[],(5, 1),[],(5, 1)]
 
-sims_to_compare = ["baseline_Tref_pH","baseline_Tref_pH_NHE_off",
-				   "low_pH_bicarb_Tref_pH","low_pH_bicarb_Tref_pH_NHE_off"]
+sims_to_compare = ["baseline_pH","baseline_pH_NHE_off",
+				   "low_pH_bicarb_pH","low_pH_bicarb_pH_NHE_off"]
 legend = ["baseline","NHE off","$pH_e$=7.2\nlow $[HCO_3^-]_e$","$pH_e$=7.2\nlow $[HCO_3^-]_e$\nNHE off"]
 
 time_transients = []

@@ -33,7 +33,7 @@ hatches = ['','///']
 line_styles = ['-','--']
 dashes = [[],(5, 1)]
 
-sims_to_compare = ["baseline_Tref_pH","baseline_Tref_pH_Km60"]
+sims_to_compare = ["baseline_pH","baseline_pH_Km60"]
 legend = ["baseline","$[Na^+]_i$ --"]
 
 time_transients = []

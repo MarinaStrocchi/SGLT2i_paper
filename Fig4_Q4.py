@@ -36,12 +36,12 @@ ax21 = plt.subplot(grid[2, 1], sharex=ax00, sharey=ax01)
 ax22 = plt.subplot(grid[2, 2], sharex=ax00, sharey=ax02)
 ax23 = plt.subplot(grid[2, 3], sharex=ax00, sharey=ax03)
 
-sims_to_compare = ["baseline_Tref_pH",
-				   "baseline_Tref_pH_Km110",
-				   "baseline_Tref_pH_Km120",
-				   "baseline_Tref_pH_Km130",
-				   "baseline_Tref_pH_Km140",
-				   "baseline_Tref_pH_Km150"]
+sims_to_compare = ["baseline_pH",
+				   "baseline_pH_Km110",
+				   "baseline_pH_Km120",
+				   "baseline_pH_Km130",
+				   "baseline_pH_Km140",
+				   "baseline_pH_Km150"]
 sizes = [20]*len(sims_to_compare)
 sizes[0] = 60
 extracted_data = metrics_data.loc[sims_to_compare]
@@ -66,11 +66,11 @@ ax03.scatter(extracted_data["Na_i[mM]"],extracted_data["T_max[kPa]"],s=sizes,col
 ax03.set_xlabel("$[Na^+]_i$ [mM]")
 ax03.set_ylabel("$T_{max}$ [kPa]")
 
-sims_to_compare = ["baseline_Tref_pH",
-				   "baseline_Tref_pH_INab200",
-				   "baseline_Tref_pH_INab300",
-				   "baseline_Tref_pH_INab400",
-				   "baseline_Tref_pH_INab500"]
+sims_to_compare = ["baseline_pH",
+				   "baseline_pH_INab200",
+				   "baseline_pH_INab300",
+				   "baseline_pH_INab400",
+				   "baseline_pH_INab500"]
 sizes = [20]*len(sims_to_compare)
 sizes[0] = 60
 extracted_data = metrics_data.loc[sims_to_compare]
@@ -95,12 +95,12 @@ ax13.scatter(extracted_data["Na_i[mM]"],extracted_data["T_max[kPa]"],s=sizes,col
 ax13.set_xlabel("$[Na^+]_i$ [mM]")
 ax13.set_ylabel("$T_{max}$ [kPa]")
 
-sims_to_compare = ["baseline_Tref_pH",
-				   "baseline_Tref_pH_H2",
-				   "baseline_Tref_pH_H4",
-				   "baseline_Tref_pH_H6",
-				   "baseline_Tref_pH_H8",
-				   "baseline_Tref_pH_H10"]
+sims_to_compare = ["baseline_pH",
+				   "baseline_pH_H2",
+				   "baseline_pH_H4",
+				   "baseline_pH_H6",
+				   "baseline_pH_H8",
+				   "baseline_pH_H10"]
 sizes = [20]*len(sims_to_compare)
 sizes[0] = 60
 extracted_data = metrics_data.loc[sims_to_compare]

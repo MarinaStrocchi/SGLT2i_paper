@@ -59,7 +59,7 @@ def get_last_beat_outputs(simulation_folder):
 
     return na_i_ss,nhe_flux_max,ca_i_diast,ca_i_peak,ca_i_ampl,t_max,mean_pH_i
 
-source_folder = "/media/mstrocch/MS_5/SGLT2i_Mike_Shattock/final_experiments/"
+source_folder = "./"
 output_folder = "./rat_model/"
 if not os.path.exists(output_folder):
 	os.system("mkdir -p "+output_folder)

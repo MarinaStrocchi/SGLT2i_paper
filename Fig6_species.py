@@ -28,17 +28,17 @@ ax00 = plt.subplot(grid[0, 0])
 ax01 = plt.subplot(grid[0, 1], sharex=ax00)
 ax02 = plt.subplot(grid[0, 2], sharex=ax00)
 
-sims_to_compare = ["baseline_Tref_pH_Km50",
-				   "baseline_Tref_pH_Km60",
-				   "baseline_Tref_pH_Km70",
-				   "baseline_Tref_pH_Km80",
-				   "baseline_Tref_pH_Km90",
-				   "baseline_Tref_pH",
-				   "baseline_Tref_pH_Km110",
-				   "baseline_Tref_pH_Km120",
-				   "baseline_Tref_pH_Km130",
-				   "baseline_Tref_pH_Km140",
-				   "baseline_Tref_pH_Km150"]
+sims_to_compare = ["baseline_pH_Km50",
+				   "baseline_pH_Km60",
+				   "baseline_pH_Km70",
+				   "baseline_pH_Km80",
+				   "baseline_pH_Km90",
+				   "baseline_pH",
+				   "baseline_pH_Km110",
+				   "baseline_pH_Km120",
+				   "baseline_pH_Km130",
+				   "baseline_pH_Km140",
+				   "baseline_pH_Km150"]
 sizes = [20]*len(sims_to_compare)
 sizes[5] = 60
 extracted_data = metrics_data.loc[sims_to_compare]
