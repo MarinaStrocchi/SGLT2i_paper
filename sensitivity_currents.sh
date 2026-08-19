@@ -387,7 +387,7 @@ cmd="python run_SS_simulation_Tref_pH_R2.py
 		--bicarb_factor 1.0 
 		--Km_Na_factor 1.0
 		--iNa_b_scale_factor 1.0
-		--iK_b_scale_factor 0.5
+		--iK_b_scale_factor 1.5
 		--H_constant 0.0
 		--pH_e 7.4 
 		--figname ${SIMFOLDER}/results.png 
