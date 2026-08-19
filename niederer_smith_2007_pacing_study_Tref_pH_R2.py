@@ -1300,6 +1300,11 @@ if __name__ == '__main__':
 
     if args.visualise:
 
+        if args.figname is None:
+            figname = os.path.join(args.simfolder,"results.png")
+        else:
+            figname = args.figname
+
         # print("Plotting results...")
         f_log.write("Plotting results...\n")
 
@@ -1307,6 +1312,6 @@ if __name__ == '__main__':
         states = numpy.loadtxt(os.path.join(args.simfolder,"states.dat"),dtype=float)
         algebraic = numpy.loadtxt(os.path.join(args.simfolder,"algebraic.dat"),dtype=float)
 
-        plot_model(voi, states, algebraic, args.figname, f_log)
+        plot_model(voi, states, algebraic, figname, f_log)
 
     f_log.close()
