@@ -2,8 +2,8 @@
 
 NBEATS=3000
 
-SIMFOLDER="HF_pH_NHE2"
-cmd="python run_SS_simulation_Tref_pH_R1.py 
+SIMFOLDER="HF_NHE2"
+cmd="python run_SS_simulation_Tref_pH_R2.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 2.0 
 		--bicarb_factor 1.0 
@@ -20,8 +20,8 @@ cmd="python run_SS_simulation_Tref_pH_R1.py
 		>/dev/null 2>&1 &"
 eval $cmd
 
-SIMFOLDER="HF_pH_NHE3"
-cmd="python run_SS_simulation_Tref_pH_R1.py 
+SIMFOLDER="HF_NHE3"
+cmd="python run_SS_simulation_Tref_pH_R2.py 
 		--simfolder ${SIMFOLDER} 
 		--nhe_factor 3.0 
 		--bicarb_factor 1.0 
