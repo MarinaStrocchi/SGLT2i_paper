@@ -64,7 +64,7 @@ output_folder = "./rat_model/"
 if not os.path.exists(output_folder):
 	os.system("mkdir -p "+output_folder)
 
-folders = ["HF_NHE2","HF_NHE3"]
+folders = ["HF_NHE2","HF_NHE3","HF_NHE5","HF_NHE10"]
 
 output_data = np.zeros((len(folders),N_outputs),dtype=float)
 
