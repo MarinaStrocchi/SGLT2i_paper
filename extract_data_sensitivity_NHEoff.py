@@ -75,25 +75,25 @@ for p in parameters:
 		folder = p+"_"+str(f)+"_NHE_off"
 		print(folder)
 
-output_data = np.zeros((len(folders),N_outputs),dtype=float)
+# output_data = np.zeros((len(folders),N_outputs),dtype=float)
 
-for i,f in enumerate(folders):
-	sim_folder = os.path.join(source_folder,f)
-	out_folder = os.path.join(output_folder,f)
-	if not os.path.exists(out_folder):
-		os.system("mkdir -p "+out_folder)
+# for i,f in enumerate(folders):
+# 	sim_folder = os.path.join(source_folder,f)
+# 	out_folder = os.path.join(output_folder,f)
+# 	if not os.path.exists(out_folder):
+# 		os.system("mkdir -p "+out_folder)
 
-	print("Extracting data from "+out_folder+"...")
+# 	print("Extracting data from "+out_folder+"...")
 
-	time,na_i,ca_i,tension,nhe_flux,ph_i = get_last_beats(sim_folder)
+# 	time,na_i,ca_i,tension,nhe_flux,ph_i = get_last_beats(sim_folder)
 
-	np.savetxt(os.path.join(out_folder,"time.dat"),time,fmt="%.2f")
-	np.savetxt(os.path.join(out_folder,"na_i.dat"),na_i,fmt="%.6f")
-	np.savetxt(os.path.join(out_folder,"ca_i.dat"),ca_i,fmt="%.6f")
-	np.savetxt(os.path.join(out_folder,"tension.dat"),tension,fmt="%.6f")
-	np.savetxt(os.path.join(out_folder,"nhe_flux.dat"),nhe_flux,fmt="%g")
+# 	np.savetxt(os.path.join(out_folder,"time.dat"),time,fmt="%.2f")
+# 	np.savetxt(os.path.join(out_folder,"na_i.dat"),na_i,fmt="%.6f")
+# 	np.savetxt(os.path.join(out_folder,"ca_i.dat"),ca_i,fmt="%.6f")
+# 	np.savetxt(os.path.join(out_folder,"tension.dat"),tension,fmt="%.6f")
+# 	np.savetxt(os.path.join(out_folder,"nhe_flux.dat"),nhe_flux,fmt="%g")
 
-	output_data[i,:] = get_last_beat_outputs(sim_folder)
+# 	output_data[i,:] = get_last_beat_outputs(sim_folder)
 
-df_data = pd.DataFrame(output_data,index=folders,columns=output_labels,dtype=float)
-df_data.to_csv(os.path.join(output_folder,"rat_model_sensitivity_analysis.csv"),float_format="%g")
+# df_data = pd.DataFrame(output_data,index=folders,columns=output_labels,dtype=float)
+# df_data.to_csv(os.path.join(output_folder,"rat_model_sensitivity_analysis_NHE_off.csv"),float_format="%g")
