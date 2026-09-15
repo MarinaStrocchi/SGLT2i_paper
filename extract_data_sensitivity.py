@@ -73,7 +73,7 @@ factors = [0.5,1.5]
 for p in parameters:
 	for f in factors:
 		folder = p+"_"+str(f)
-		print(folder)
+		folders.append(folder)
 
 output_data = np.zeros((len(folders),N_outputs),dtype=float)
 
