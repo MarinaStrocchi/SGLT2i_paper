@@ -67,7 +67,7 @@ def run_split_model(args):
 	store_actions = ['fast','visualise','compute_algebraic','coarse']
 	original_args = copy.deepcopy(args)
 	for i in range(Nsplits):
-		process_cmd = ['python','niederer_smith_2007_pacing_study_Tref_pH_R1.py']
+		process_cmd = ['python','niederer_smith_2007_pacing_study_Tref_pH_R2.py']
 
 		simfolder_sub = os.path.join(original_args.simfolder,"split_"+str(i))
 		args_dct = vars(args)
@@ -178,67 +178,67 @@ if __name__ == '__main__':
 	parser.add_argument("--coarse", help="Use coarse solution to compute algebraic",
 						action="store_true")
 
-# factors for sensitivity analysis 
-    parser.add_argument('--pCa_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales calcium pump (constant 86)')
+	# factors for sensitivity analysis 
+	parser.add_argument('--pCa_scale_factor', type=str, default="1.0", required=False,
+						help='Scales calcium pump (constant 86)')
 
-    parser.add_argument('--Cab_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales calcium background current (constant 89)')
+	parser.add_argument('--Cab_scale_factor', type=str, default="1.0", required=False,
+						help='Scales calcium background current (constant 89)')
 
-    parser.add_argument('--jRel_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales calcium release (constant 102)')
+	parser.add_argument('--jRel_scale_factor', type=str, default="1.0", required=False,
+						help='Scales calcium release (constant 102)')
 
-    parser.add_argument('--Cl_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales Cl current (constant 82)')
+	parser.add_argument('--Cl_scale_factor', type=str, default="1.0", required=False,
+						help='Scales Cl current (constant 82)')
 
-    parser.add_argument('--che_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales CHE flux (constant 51)')
+	parser.add_argument('--che_scale_factor', type=str, default="1.0", required=False,
+						help='Scales CHE flux (constant 51)')
 
-    parser.add_argument('--ae_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales AE flux (constant 71)')
+	parser.add_argument('--ae_scale_factor', type=str, default="1.0", required=False,
+						help='Scales AE flux (constant 71)')
 
-    parser.add_argument('--ncb_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales NCB flux (constant 61)')
+	parser.add_argument('--ncb_scale_factor', type=str, default="1.0", required=False,
+						help='Scales NCB flux (constant 61)')
 
-    parser.add_argument('--H_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales H current (constant 83)')
+	parser.add_argument('--H_scale_factor', type=str, default="1.0", required=False,
+						help='Scales H current (constant 83)')
 
-    parser.add_argument('--Kss_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales Kss current (constant 24)')
+	parser.add_argument('--Kss_scale_factor', type=str, default="1.0", required=False,
+						help='Scales Kss current (constant 24)')
 
-    parser.add_argument('--K1_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales K1 current (constant 25)')
+	parser.add_argument('--K1_scale_factor', type=str, default="1.0", required=False,
+						help='Scales K1 current (constant 25)')
 
-    parser.add_argument('--Kt_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales K Ca-dependent current (constant 20)')
+	parser.add_argument('--Kt_scale_factor', type=str, default="1.0", required=False,
+						help='Scales K Ca-dependent current (constant 20)')
 
-    parser.add_argument('--Kf_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales K hyperpolarization current (constant 26)')
+	parser.add_argument('--Kf_scale_factor', type=str, default="1.0", required=False,
+						help='Scales K hyperpolarization current (constant 26)')
 
-    parser.add_argument('--Ko_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales K outward current (constant 17)')
+	parser.add_argument('--Ko_scale_factor', type=str, default="1.0", required=False,
+						help='Scales K outward current (constant 17)')
 
-    parser.add_argument('--NaK_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales NaK pump (constant 32)')
+	parser.add_argument('--NaK_scale_factor', type=str, default="1.0", required=False,
+						help='Scales NaK pump (constant 32)')
 
-    parser.add_argument('--Na_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales Na current (constant 18)')
+	parser.add_argument('--Na_scale_factor', type=str, default="1.0", required=False,
+						help='Scales Na current (constant 18)')
 
-    parser.add_argument('--Naf_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales Na hyperpolarization current (constant 27)')
+	parser.add_argument('--Naf_scale_factor', type=str, default="1.0", required=False,
+						help='Scales Na hyperpolarization current (constant 27)')
 
-    parser.add_argument('--ncx_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales NCX current (constant 94)')
+	parser.add_argument('--ncx_scale_factor', type=str, default="1.0", required=False,
+						help='Scales NCX current (constant 94)')
 
-    parser.add_argument('--serca_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales SERCA current (constant 95)')
+	parser.add_argument('--serca_scale_factor', type=str, default="1.0", required=False,
+						help='Scales SERCA current (constant 95)')
 
-    parser.add_argument('--CaL_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales CaL current (constant 103)')
+	parser.add_argument('--CaL_scale_factor', type=str, default="1.0", required=False,
+						help='Scales CaL current (constant 103)')
 
-    parser.add_argument('--leak_scale_factor', type=str, default="1.0", required=False,
-                        help='Scales Ca leak current (constant 99)')
-    
+	parser.add_argument('--leak_scale_factor', type=str, default="1.0", required=False,
+						help='Scales Ca leak current (constant 99)')
+
 	args = parser.parse_args()
 
 	run_split_model(args)
