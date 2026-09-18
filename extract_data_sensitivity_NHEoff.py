@@ -69,11 +69,11 @@ parameters += ["Cl","Kss","K1","Kt","Kf","Ko","NaK","Na","Nab","Kb","Naf"]
 parameters += ["CHE","AE","NCB","H"]
 
 folders = []
-factors = [0.5,1.5]
+factors = [50,150]
 for p in parameters:
 	for f in factors:
 		folder = p+"_"+str(f)+"_NHE_off"
-        folders.append(folder)
+		folders.append(folder)
 
 output_data = np.zeros((len(folders),N_outputs),dtype=float)
 
